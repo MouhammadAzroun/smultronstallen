@@ -1,6 +1,7 @@
 package com.example.smultronstallen
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.TextureView
 import android.view.View
@@ -29,6 +30,15 @@ class RecyclerViewAdapter(val context: Context, val places : List<Place>)
     inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val heading = itemView.findViewById<TextView>(R.id.headingTextView)
         var listItemPosition = 0
+
+        init {
+            itemView.setOnClickListener{
+                val intent = Intent(context, InfoActivity::class.java)
+                intent.putExtra(PLACE_POSITION_KEY, listItemPosition)
+                context.startActivity(intent)
+
+            }
+        }
 
     }
 }
