@@ -2,6 +2,7 @@ package com.example.smultronstallen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 
 
@@ -22,5 +23,11 @@ class InfoActivity : AppCompatActivity() {
         val place = DataManager.placeList[position]
         titleTv.text = place.heading
         infoTV.text = place.info
+
+
+        val backButton = findViewById<Button>(R.id.backButton)
+        backButton.setOnClickListener {
+            finish()
+        }
     }
 }

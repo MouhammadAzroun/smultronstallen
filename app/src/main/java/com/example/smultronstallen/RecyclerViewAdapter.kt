@@ -21,6 +21,7 @@ class RecyclerViewAdapter(val context: Context, val places : List<Place>)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val place = places[position]
         holder.heading.text = place.heading
+        holder.listItemPosition = position
     }
 
     override fun getItemCount(): Int {
@@ -30,6 +31,7 @@ class RecyclerViewAdapter(val context: Context, val places : List<Place>)
     inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val heading = itemView.findViewById<TextView>(R.id.headingTextView)
         var listItemPosition = 0
+
 
         init {
             itemView.setOnClickListener{

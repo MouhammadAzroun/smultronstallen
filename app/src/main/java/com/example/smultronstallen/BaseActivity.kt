@@ -1,7 +1,9 @@
 package com.example.smultronstallen
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -15,6 +17,12 @@ class BaseActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = RecyclerViewAdapter(this, DataManager.placeList)
+
+        val newPlaceBtn = findViewById<Button>(R.id.addPlaceButton)
+        newPlaceBtn.setOnClickListener {
+            val intent = Intent(this, AddPlaceActivity :: class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onResume() {
