@@ -8,15 +8,19 @@
 
     <TextView
         android:id="@+id/infoTextView"
-        android:layout_width="347dp"
-        android:layout_height="458dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="370dp"
+        android:layout_height="527dp"
+        android:layout_marginTop="50dp"
+        android:fadeScrollbars="false"
+        android:isScrollContainer="false"
+        android:overScrollMode="always"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
         android:scrollbarStyle="insideOverlay"
+        android:textSize="16sp"
         android:verticalScrollbarPosition="defaultPosition"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titelTextView" />
 
     <TextView
         android:id="@+id/titelTextView"
@@ -24,8 +28,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#0B4C80"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

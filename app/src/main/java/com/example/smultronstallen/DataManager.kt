@@ -13,39 +13,6 @@ object DataManager {
             "The park is centered around the shores and sea of the Koster Islands.\n" +
             "Kosterhavet’s coral reefs make it popular with snorkelers and divers," +
             " while landlubbers can enjoy quaint fishing villages waiting" +
-            " to be turned into picture postcards." +
-    "Sweden has lots of coastline, no doubt about that," +
-    " but the best place to observe marine line under protected circumstances" +
-    " is Kosterhavet National Park.\n" +
-    "Kosterhavet, which borders Norway," +
-    " is the country’s first marine national park. \n" +
-    "With 6,000 species of marine life, the park is home" +
-    "to several species that can’t be found anywhere else in Sweden.\n" +
-    "The park is centered around the shores and sea of the Koster Islands.\n" +
-    "Kosterhavet’s coral reefs make it popular with snorkelers and divers," +
-    " while landlubbers can enjoy quaint fishing villages waiting" +
-    " to be turned into picture postcards." +
-            "Sweden has lots of coastline, no doubt about that," +
-            " but the best place to observe marine line under protected circumstances" +
-            " is Kosterhavet National Park.\n" +
-            "Kosterhavet, which borders Norway," +
-            " is the country’s first marine national park. \n" +
-            "With 6,000 species of marine life, the park is home" +
-            "to several species that can’t be found anywhere else in Sweden.\n" +
-            "The park is centered around the shores and sea of the Koster Islands.\n" +
-            "Kosterhavet’s coral reefs make it popular with snorkelers and divers," +
-            " while landlubbers can enjoy quaint fishing villages waiting" +
-            " to be turned into picture postcards." +
-            "Sweden has lots of coastline, no doubt about that," +
-            " but the best place to observe marine line under protected circumstances" +
-            " is Kosterhavet National Park.\n" +
-            "Kosterhavet, which borders Norway," +
-            " is the country’s first marine national park. \n" +
-            "With 6,000 species of marine life, the park is home" +
-            "to several species that can’t be found anywhere else in Sweden.\n" +
-            "The park is centered around the shores and sea of the Koster Islands.\n" +
-            "Kosterhavet’s coral reefs make it popular with snorkelers and divers," +
-            " while landlubbers can enjoy quaint fishing villages waiting" +
             " to be turned into picture postcards."
 
     val marstrand: String = "Marstrand, a city since 1200, is known for two things: \n" +
