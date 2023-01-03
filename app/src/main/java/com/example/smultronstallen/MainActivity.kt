@@ -33,10 +33,6 @@ class MainActivity : AppCompatActivity() {
         signInButton.setOnClickListener{
             signIn()
         }
-        if(auth.currentUser != null){
-            gotToBaseActivity()
-        }
-
     }
 
     fun gotToBaseActivity(){

@@ -38,12 +38,11 @@ class AddPlaceActivity : AppCompatActivity() {
         val info = newInfo.text.toString()
 
         val currentUser = auth.currentUser
-        if(currentUser == null){
-            return
+        if(currentUser != null){
+            val newPlace = Place(heading= heading, info = info)
+            DataManager.placeList.add(newPlace)
+            db.collection("Users").document(currentUser.uid)
+                .collection("Places").add(newPlace)
         }
-        val newPlace = Place(heading= heading, info = info)
-        DataManager.placeList.add(newPlace)
-        db.collection("Users").document(currentUser.uid)
-            .collection("Places").add(newPlace)
     }
 }
