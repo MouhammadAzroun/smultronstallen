@@ -1,5 +1,7 @@
 package com.example.smultronstallen
 
-data class Place(val heading : String? = null, val info : String? = null){
+import com.google.firebase.firestore.DocumentId
+
+data class Place( @DocumentId var documentId : String? = null, val heading : String? = null, val info : String? = null){
 
 }

@@ -45,8 +45,8 @@ object DataManager {
 
 
     fun addPlaces(){
-        placeList.add(Place("Kosterhavet National Park", kosterhavet))
-        placeList.add(Place("Marstrand", marstrand))
-        placeList.add(Place("Malmö", malmo))
+        placeList.add(Place(heading = "Kosterhavet National Park", info =  kosterhavet))
+        placeList.add(Place(heading = "Marstrand", info =  marstrand))
+        placeList.add(Place(heading = "Malmö", info = malmo))
     }
 }

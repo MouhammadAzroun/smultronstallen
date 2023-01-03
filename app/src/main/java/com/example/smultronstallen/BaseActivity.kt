@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -22,6 +23,10 @@ class BaseActivity : AppCompatActivity() {
         newPlaceBtn.setOnClickListener {
             val intent = Intent(this, AddPlaceActivity :: class.java)
             startActivity(intent)
+        }
+        val logOutButton = findViewById<ImageButton>(R.id.logOutImageButton)
+        logOutButton.setOnClickListener{
+            finish()
         }
     }
 

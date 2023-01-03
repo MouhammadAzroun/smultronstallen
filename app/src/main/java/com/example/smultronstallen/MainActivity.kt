@@ -33,7 +33,15 @@ class MainActivity : AppCompatActivity() {
         signInButton.setOnClickListener{
             signIn()
         }
+        if(auth.currentUser != null){
+            gotToBaseActivity()
+        }
 
+    }
+
+    fun gotToBaseActivity(){
+        val intent = Intent(this, BaseActivity::class.java)
+        startActivity(intent)
     }
 
     private fun signIn(){
@@ -47,8 +55,7 @@ class MainActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email,password)
             .addOnCompleteListener{ task ->
                 if (task.isSuccessful){
-                    val intent = Intent(this, BaseActivity::class.java)
-                    startActivity(intent)
+                    gotToBaseActivity()
                 }else{
                     Toast.makeText(this, "Email or password is wrong!", Toast.LENGTH_SHORT).show()
                 }
@@ -68,6 +75,7 @@ class MainActivity : AppCompatActivity() {
             .addOnCompleteListener{ task ->
                 if (task.isSuccessful){
                     Toast.makeText(this, "account created successfully!", Toast.LENGTH_SHORT).show()
+                    gotToBaseActivity()
                 }else{
                     Toast.makeText(this, "Please enter a valid email address!", Toast.LENGTH_SHORT).show()
                 }
