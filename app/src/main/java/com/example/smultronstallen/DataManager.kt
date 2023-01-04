@@ -1,5 +1,7 @@
 package com.example.smultronstallen
 
+import com.google.android.gms.maps.model.LatLng
+
 object DataManager {
     val placeList = mutableListOf<Place>()
 
@@ -45,8 +47,8 @@ object DataManager {
 
 
     fun addPlaces(){
-        placeList.add(Place(heading = "Kosterhavet National Park", info =  kosterhavet))
-        placeList.add(Place(heading = "Marstrand", info =  marstrand))
-        placeList.add(Place(heading = "Malmö", info = malmo))
+        placeList.add(Place(heading = "Kosterhavet National Park", info =  kosterhavet, latLng = LatLng(58.8,11.0)))
+        placeList.add(Place(heading = "Marstrand", info =  marstrand, latLng = LatLng(57.8, 11.5)))
+        placeList.add(Place(heading = "Malmö", info = malmo, latLng = LatLng(55.6,13.0)))
     }
 }

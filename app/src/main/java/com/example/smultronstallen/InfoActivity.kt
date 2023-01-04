@@ -1,8 +1,10 @@
 package com.example.smultronstallen
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 
 
@@ -28,6 +30,11 @@ class InfoActivity : AppCompatActivity() {
         val backButton = findViewById<Button>(R.id.backButton)
         backButton.setOnClickListener {
             finish()
+        }
+        val mapButton = findViewById<ImageButton>(R.id.mapImageButton)
+        mapButton.setOnClickListener{
+            val intent = Intent(this, MapsActivity::class.java)
+            startActivity(intent)
         }
     }
 }
