@@ -14,16 +14,20 @@ class AddPlaceActivity : AppCompatActivity() {
 
     lateinit var db : FirebaseFirestore
     lateinit var auth : FirebaseAuth
-    lateinit var newHeading : EditText
-    lateinit var newInfo : EditText
+    lateinit var headingView : EditText
+    lateinit var infoView : EditText
+    lateinit var latView : EditText
+    lateinit var langView : EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_place)
 
         auth = Firebase.auth
         db = Firebase.firestore
-        newHeading = findViewById(R.id.headingEditText)
-        newInfo = findViewById(R.id.infoEditText)
+        headingView = findViewById(R.id.headingEditText)
+        infoView = findViewById(R.id.infoEditText)
+        latView = findViewById(R.id.latEditText)
+        langView = findViewById(R.id.langEditText)
 
         val saveButton = findViewById<Button>(R.id.saveButton)
         saveButton.setOnClickListener {
@@ -34,12 +38,14 @@ class AddPlaceActivity : AppCompatActivity() {
     }
 
     private fun createNewPlace(){
-        val heading = newHeading.text.toString()
-        val info = newInfo.text.toString()
+        val heading = headingView.text.toString()
+        val info = infoView.text.toString()
+        val lat = latView.text.toString().toDoubleOrNull()
+        val lang = langView.text.toString().toDoubleOrNull()
 
         val currentUser = auth.currentUser
         if(currentUser != null){
-            val newPlace = Place(heading = heading, info = info)
+            val newPlace = Place(heading = heading, info = info, lat = lat, lang = lang)
             DataManager.placeList.add(newPlace)
             db.collection("Users").document(currentUser.uid)
                 .collection("Places").add(newPlace)

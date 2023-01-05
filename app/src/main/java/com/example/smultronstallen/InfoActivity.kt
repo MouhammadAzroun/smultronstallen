@@ -34,6 +34,7 @@ class InfoActivity : AppCompatActivity() {
         val mapButton = findViewById<ImageButton>(R.id.mapImageButton)
         mapButton.setOnClickListener{
             val intent = Intent(this, MapsActivity::class.java)
+            intent.putExtra(PLACE_POSITION_KEY, position)
             startActivity(intent)
         }
     }

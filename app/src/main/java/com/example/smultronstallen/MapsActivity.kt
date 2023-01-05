@@ -2,6 +2,7 @@ package com.example.smultronstallen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -45,11 +46,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     fun createMarker(){
         val position = intent.getIntExtra(PLACE_POSITION_KEY, PLACE_NOT_SET)
         // when we put position instead of 0 the app crashes.
-        val place = DataManager.placeList[0]
-        var placeLocation =place.latLng
+        val place = DataManager.placeList[position]
+        if(place.lat == null || place.lang == null){
+            finish()
+            Toast.makeText(this, "Map unavailable for this location!", Toast.LENGTH_SHORT).show()
+            return
+        }
         var marker = mMap.addMarker(
             MarkerOptions()
-                .position(placeLocation!!)
+                .position(LatLng(place.lat, place.lang))
                 .title(place.heading)
         )
     }
