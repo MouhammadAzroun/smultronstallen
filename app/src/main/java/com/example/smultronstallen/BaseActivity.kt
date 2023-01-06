@@ -49,6 +49,12 @@ class BaseActivity : AppCompatActivity() {
             val intent = Intent(this, AddPlaceActivity :: class.java)
             startActivity(intent)
         }
+
+        val signOutButton = findViewById<ImageButton>(R.id.signOutImageButton)
+        signOutButton.setOnClickListener{
+            auth.signOut()
+            finish()
+        }
     }
 
     override fun onResume() {
